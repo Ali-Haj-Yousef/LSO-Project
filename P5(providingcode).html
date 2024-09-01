@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style type="text/css">
+            body{background-image:url("bg.jpg") ;background-size: cover;background-repeat: no-repeat;height:100vh;}
+            .table{border-width: 2px;border-color:black;background-color:rgb(238, 236, 129);}
+            .font{font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 28px;}
+            .buttonbefore{background-color: rgb(86, 87, 33);width:250px;
+            border:none;color:white;padding:15px 32px;text-align:center
+            ;font-size: 25px;font-family:Georgia, 'Times New Roman', Times, serif; border-radius: 5px;
+            }
+            .buttonafter:hover{background-color:rgb(110, 116, 36) ;}
+            .input{height:60px;width:300px;font-size: 30px;padding-left: 100px;padding-top: 10px;
+            padding-bottom: 10px;color: rgb(37, 37, 10);}
+       </style>
+       <script type="text/javascript">
+            function find(){
+                var nom=localStorage.getItem('a1');
+                document.getElementById('dear').innerHTML=nom;
+                return;
+             }
+             function coding(length){
+                var result="";
+                var chars="1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                for(i=0;i<length;i++)
+                    result+=chars[Math.floor(Math.random()*chars.length)];
+                localStorage.setItem('mar',result);
+                document.getElementById('code').value=result;
+                var cb=navigator.clipboard;
+                cb.writeText(result);
+             }
+       </script>
+    </head>
+    <body onload="find(),coding(12)">
+        <p><img src="Logo plus.svg" height="200px"></p><br><br><br>
+        <p>
+            <table align="center" border="1" rules="none" width="1200px" height="30px" class="table" cellpadding="20">
+                <tr><td class="font"><b>Dear <span id="dear"></span> ...</b><br><br>
+                    You have been provided the code below that you may use it later.
+                    </td>
+                </tr>
+                <tr><td align="center"><input type="text" id="code" name="code" size="30" class="input" readonly></td></tr>
+            </table>
+        </p><br>
+        <p align="center"><a href="P6(donationtype).html"><input type="button" value="Next    =>" class="buttonbefore buttonafter"></a></p>
+    </body>
+</html>

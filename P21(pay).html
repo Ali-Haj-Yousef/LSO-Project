@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style type="text/css">
+            body{background-image:url("abstract-blur-shopping-mall.jpg") ;background-size: cover;background-repeat: no-repeat;height:100vh;}
+            .table{border-width: 2px;border-color:rgb(19, 13, 53);border-radius:10px;background-color:rgb(212, 185, 150);}
+            .font{font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 28px;color:rgb(10, 9, 31)}
+            .buttonbefore{background-color: rgb(34, 33, 87);width:250px;
+            border:none;color:white;padding:15px 32px;text-align:center
+            ;font-size: 25px;font-family:Georgia, 'Times New Roman', Times, serif; border-radius: 5px;
+            }
+            .buttonafter:hover{background-color:rgb(86, 86, 143) ;}
+            .input{height:30px;width:200px;font-size:20px;}
+        </style>
+        <script type="text/javascript">
+            function c(){
+                var pa=localStorage.getItem('p00');
+                document.getElementById('pay2').innerHTML=pa;
+                var de=localStorage.getItem('a11');
+                document.getElementById('d1').innerHTML=de;
+            }
+            function verify1 (){
+		      if((document.formulaire1.card[0].checked == false)&& (document.formulaire1.card[1].checked == false) && (document.formulaire1.card[2].checked == false) ){
+			      alert('please choose your paying method');
+				  return false;
+			   }
+			  else 
+			  if(document.formulaire1.holdername.value == "") {			    
+                 alert("Please enter the holder name!");				 
+                 document.formulaire1.holdername.focus();	
+                 return false;				
+			  }
+			  else 
+              for(i=0;i<document.formulaire1.holdername.value.length;++i)
+               if(document.formulaire1.holdername.value.charAt(i) < "a" || document.formulaire1.holdername.value.charAt(i) > "z"){
+               alert("The holder name must be in small letters without any space!");
+               document.formulaire1.holdername.focus();
+			   return false;			   
+			   }
+			 else 
+		     if(document.formulaire1.holdername.value.length < 3){
+			   alert("The holder name must contain at least 3 letters!");
+               document.formulaire1.holdername.focus();
+			   return false;			   
+			   }
+			 else 
+			 if(document.formulaire1.cardnumber.value == "") {
+                 alert("Please enter your card number!");
+                 document.formulaire1.cardnumber.focus();
+                 return false;				
+             }
+			 else 
+              for(i=0;i<document.formulaire1.cardnumber.value.length;++i)
+              if(document.formulaire1.cardnumber.value.charAt(i) < "0"|| document.formulaire1.cardnumber.value.charAt(i) > "9"){
+               alert("This is not a card number (don't use space)!");
+               document.formulaire1.cardnumber.focus();
+			   return false;			   
+			   }
+			 else  
+			 if(document.formulaire1.cardnumber.value.length<10){
+			   alert("The card number must contain at least 10 numbers!");
+			   document.formulaire1.cardnumber.focus();
+			   return false;			   
+			   }
+			 else 
+			     document.getElementById('post1').innerHTML="Purchase has been made successfully."
+                 return 1;
+			}
+        </script>
+    </head>
+    <body onload="c()">
+        <br><p><img src="albaraka.svg" height="10%" width="10%"></p><br>
+        <form name="formulaire1">
+        <table align="center" rules="none" width="1000px" height="30px" class="table" cellpadding="20">
+            <tr>
+                <td  colspan="4" class="font"><b>Dear  <span id="d1"></span> ...</b><br><br>The total price that you should pay is&nbsp;&nbsp;
+                    <b><span id="pay2"></span>$</b>.<br><br>
+                    Fill the payment information below:
+                </td>
+            </tr>
+            <tr>
+                <td class="font">Payment card:</td>
+                <td>
+                    <img src="visalogopngtransparentpng-1579588235384.png" width="70px"><br>
+                    <input type="radio" name="card" id="c1" class="box">
+                </td>
+                <td>
+                    <img src="989px-Mastercard-logo.svg.png" width="70px"><br>
+                    <input type="radio" name="card" id="c2" class="box">
+                </td>
+                <td>
+                    <img src="Screenshot_20230310-232506_Gallery.jpg" height="55px" width="70px"><br>
+                    <input type="radio" name="card" id="c3" class="box">
+                </td>
+            </tr>
+            <tr><td colspan="4" class="font">Card holder name:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="holdername" size="30" class="input"></td></tr>
+            <tr><td colspan="4" class="font">Card number:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="cardnumber" size="15" class="input"></td></tr>
+            <tr><th colspan="4" class="font" id="post1"></th></tr>
+        </table>
+        </form>
+        <p align="center"><input type="button" value="Buy now" class="buttonbefore buttonafter" onclick="verify1()">
+    </body>
+</html>

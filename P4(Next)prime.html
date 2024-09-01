@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style type="text/css">
+            body{background-image:url("bg.jpg") ;background-size: cover;background-repeat: no-repeat;height:100vh;}
+            .table{border-width: 2px;border-color:black;background-color:rgb(238, 236, 129);}
+            .font{font-family:Georgia, 'Times New Roman', Times, serif;
+            font-size: 25px;}
+            .buttonbefore{background-color: rgb(86, 87, 33);width:250px;
+            border:none;color:white;padding:15px 32px;text-align:center
+            ;font-size: 25px;font-family:Georgia, 'Times New Roman', Times, serif; border-radius: 5px;
+            }
+            .buttonafter:hover{background-color:rgb(110, 116, 36) ;}
+            .input{height:30px;width:200px;font-size:20px;}
+            .email{height:30px;width:350px;font-size: 20px;}
+        </style>
+        <script type="text/javascript">
+        function found(){
+            sessionStorage.setItem('a1',document.getElementById('firstname').value);
+            sessionStorage.setItem('a2',document.getElementById('lastname').value);
+            sessionStorage.setItem('a3',document.getElementById('country').value);
+            sessionStorage.setItem('a4',document.getElementById('age').value);
+            sessionStorage.setItem('a5',document.getElementById('email').value);
+            return;
+        }	 
+          function verify() {
+              if(document.formulaire.firstname.value == "") {			    
+                 alert("Please enter your first name!");				 
+                 document.formulaire.firstname.focus();	
+                 return false;				
+			  }
+			  if(document.formulaire.lastname.value == "") {
+                 alert("Please enter your last name!");
+                 document.formulaire.lastname.focus();
+                 return false;				 
+			  }
+             if(document.formulaire.country.value == "Choose your country") {
+                  alert("Please choose your country!");
+                  document.formulaire.country.focus();
+                  return false;				  
+              } 
+			  if(document.formulaire.age.value == "") {
+                 alert("Please enter your age!");
+                 document.formulaire.age.focus();
+                 return false;				
+             }
+             if(document.formulaire.email.value == "") {
+                 alert("Please enter your email!");
+                 document.formulaire.email.focus();
+                 return false;				
+             }          
+			     document.getElementById('g').innerHTML="Your information have been saved. Go next."
+                 return 1;
+		 }
+         function look1(){
+                var b=verify();
+                if(b!=1){
+                    alert("Please fill the form completely.");
+                    return false;
+                }
+            }
+        </script>
+    </head>
+    <body>
+            <p><img src="Logo plus.svg" height="200px"></p><br><table align="center" border="1" width="1200px" height="60px" class="table" cellpadding="10" cellspacing="0">
+                <tr><td align="center" class="font"><b><span id="g"></span></b></td></tr>
+            </table>
+        <p>
+            <table align="center" border="1" width="1200px" height="30px" class="table" cellpadding="10" cellspacing="0">
+			  <form name="formulaire">
+                <tr>
+                    <td colspan="2" class="font"><b>Dear Donor...</b><br>If you want to support the affected Syrian and Turkish families, 
+                    please fill at first the needed information:</td>
+                </tr>
+                <tr>
+                    <td class="font">First name:&nbsp;&nbsp;<input type="text" id="firstname" name="firstname" size="20" class="input" onchange="found()"></td>
+                    <td class="font">Last name:&nbsp;&nbsp;<input type="text" id="lastname" name="lastname" size="20" class="input" onchange="found()"></td>
+                </tr>
+                <tr>
+                    <td class="font">Country:&nbsp;&nbsp;<select id="country" name="country" class="font" onchange="found()"><option selected disabled>Choose your country</option> <option>Lebanon</option> <option>Egypt</option><option>Saudi Arabia</option></select></td>
+                    <td class="font">Age:&nbsp;&nbsp;<input type="text" id="age" name="age" size="30" class="input" onchange="found()"></td>
+                <tr><td colspan="2" align="center" class="font">Email address:&nbsp;&nbsp;<input type="text" id="email" name="email" size="40" class="email" onchange="found()"></td></tr>
+			    <tr><td colspan="2" align="center" class="font"><input type="button" value="Submit" class="font" onclick="verify()">&nbsp;&nbsp;<input type="Reset" value="Reset" class="font"></td></tr>
+        </table>
+        </p><br>
+        <table align="center" border="0" width="1200px">
+            <tr>
+                <td align="center"><a href="P1(Home).html"><input type="button" value="<=   Back to home" class="buttonbefore buttonafter" ></a></td>
+                <td align="center"><a href="P5(providingcode).html"><input type="button" value="Next     =>" class="buttonbefore buttonafter" onclick="return look1()"></a></td>
+            </tr>
+        </table>
+    </body>
+</html>

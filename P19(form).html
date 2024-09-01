@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style type="text/css">
+            body{background-image:url("abstract-blur-shopping-mall.jpg") ;background-size: cover;background-repeat: no-repeat;height:100vh;}
+            .table{border-width: 2px;border-color:rgb(19, 13, 53);border-radius:10px;background-color:rgb(212, 185, 150);}
+            .font{font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 28px;color:rgb(10, 9, 31)}
+            .buttonbefore{background-color: rgb(34, 33, 87);width:250px;
+            border:none;color:white;padding:15px 32px;text-align:center
+            ;font-size: 25px;font-family:Georgia, 'Times New Roman', Times, serif; border-radius: 5px;
+            }
+            .buttonafter:hover{background-color:rgb(86, 86, 143) ;}
+            .input{height:30px;width:200px;font-size:20px;}
+            .email{height:30px;width:350px;font-size: 20px;}
+        </style>
+        <script type="text/javascript">
+            function found(){
+                localStorage.setItem('a11',document.getElementById('firstname').value);
+                return;
+            }
+            function verify() {
+              if(document.formulaire.firstname.value == "") {			    
+                 alert("Before shopping, please enter your first name!");				 
+                 document.formulaire.firstname.focus();	
+                 return false;				
+			  }
+              for(i=0;i<document.formulaire.firstname.value.length;++i)
+                if(document.formulaire.firstname.value.charAt(i) < "a" || document.formulaire.firstname.value.charAt(i) > "z"){
+                alert("The first name must be in small letters without any space!");
+                document.formulaire.firstname.focus();
+                return false;			   
+			   }
+		     if(document.formulaire.firstname.value.length < 3){
+			   alert("The first name must contain at least 3 letters!");
+               document.formulaire.firstname.focus();
+			   return false;			   
+			   } 
+			  if(document.formulaire.lastname.value == "") {
+                 alert("Before shopping, please enter your last name!");
+                 document.formulaire.lastname.focus();
+                 return false;				 
+			  } 
+              for(i=0;i<document.formulaire.lastname.value.length;++i)
+               if(document.formulaire.lastname.value.charAt(i) < "a"|| document.formulaire.lastname.value.charAt(i) > "z"){
+               alert("The last name must be in small letters without any space!");
+               document.formulaire.lastname.focus();
+			   return false;			   
+			   }
+			 if(document.formulaire.lastname.value.length < 3){
+			   alert("The last name must contain at least 3 letters!");
+               document.formulaire.lastname.focus();
+			   return false;			   
+			   } 
+             if(document.formulaire.country.value == "Choose your country") {
+                  alert("Before shopping, please choose your country!");
+                  document.formulaire.country.focus();
+                  return false;				  
+              } 
+              if(document.formulaire.address.value == "") {
+                 alert("Before shopping, please enter your address!");
+                 document.formulaire.address.focus();
+                 return false;				
+             }
+			  if(document.formulaire.age.value == "") {
+                 alert("Before shopping, please enter your age!");
+                 document.formulaire.age.focus();
+                 return false;				
+             }
+              for(i=0;i<document.formulaire.age.value.length;++i)
+               if(document.formulaire.age.value.charAt(i) < "0"|| document.formulaire.age.value.charAt(i) > "9"){
+               alert("This is not an age!");
+               document.formulaire.age.focus();
+			   return false;			   
+			   } 
+			 if(document.formulaire.age.value < 18) {
+                 alert("You have to be older than 18 to donate!");
+                 document.formulaire.age.focus();
+                 return false;
+             } 
+			if(document.formulaire.age.value > 100) {
+                 alert("Before shopping, please enter your real age!");
+                 document.formulaire.age.focus();
+                 return false;
+             }	
+             if(document.formulaire.email.value == "") {
+                 alert("Before shopping, please enter your email!");
+                 document.formulaire.email.focus();
+                 return false;				
+             }
+             if(document.formulaire.email.value.indexOf('@') == -1) {
+                 alert("This is not an email!");
+                 document.formulaire.email.focus();
+                 return false;				 
+             }	
+              else			 
+			     alert("Your information have been saved.");
+                 return 5;
+		 }
+        </script>
+    </head>
+    <body>
+        <br><p><img src="albaraka.svg" height="20%" width="20%"></p><br><br><br><br><br>
+        <table align="center" border="0" width="1200px" height="30px" class="table" cellpadding="10" cellspacing="0">
+            <form name="formulaire">
+              <tr>
+                  <td colspan="2" class="font"><b>Dear ...</b><br>If you want to shop in our market, 
+                  please fill at first the needed information:</td>
+              </tr>
+              <tr>
+                  <td class="font">First name:&nbsp;&nbsp;<input type="text" id="firstname" name="firstname" size="20" class="input" onchange="found()"></td>
+                  <td class="font">Last name:&nbsp;&nbsp;<input type="text" id="lastname" name="lastname" size="20" class="input"></td>
+              </tr>
+              <tr>
+                  <td class="font">Country:&nbsp;&nbsp;<select id="country" name="country" class="font" ><option selected disabled>Choose your country</option> <option>Lebanon</option> <option>Egypt</option><option>Saudi Arabia</option></select></td>
+                  <td class="font">Address:&nbsp;&nbsp;<input type="text" id="address" name="address" size="50" class="input" ></td>
+              <tr><td class="font">Email address:&nbsp;&nbsp;
+                <input type="text" id="email" name="email" size="40" class="email"></td>
+                <td class="font">Age:&nbsp;&nbsp;<input type="text" id="age" name="age" size="30" class="input" ></td>
+            </tr>
+              <tr><td colspan="2" align="center" class="font"><input type="Reset" value="Reset" class="font"></td></tr>
+      </table>
+      </p><br>
+      <table align="center" border="0" width="1200px">
+          <tr>
+              <td align="center"><a href="P13(Shop).html"><input type="button" value="<=   Back" class="buttonbefore buttonafter" ></a></td>
+              <td align="center"><a href="P20(market).html"><input type="button" value="Go to shop     =>" class="buttonbefore buttonafter" onclick="return verify()"></a></td>
+          </tr>
+      </table>
+    </body>
+</html>

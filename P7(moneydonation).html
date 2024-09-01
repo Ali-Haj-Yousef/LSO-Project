@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style type="text/css">
+            body{background-image:url("bg.jpg") ;background-size: cover;background-repeat: no-repeat;height:100vh;}
+            .table{border-width: 2px;border-color:black;background-color:rgb(238, 236, 129);}
+            .font{font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 28px;}
+            .buttonbefore{background-color: rgb(86, 87, 33);width:250px;
+            border:none;color:white;padding:15px 32px;text-align:center
+            ;font-size: 25px;font-family:Georgia, 'Times New Roman', Times, serif; border-radius: 5px;
+            }
+            .buttonafter:hover{background-color:rgb(110, 116, 36) ;}
+            .input{height:30px;width:200px;font-size:20px;}
+            .box{width:50px;}
+            button{height:60px;width:80px}
+       </style>
+       <script type="text/javascript">
+	        var y;
+            function money(){
+                localStorage.setItem('amount',document.getElementById('don').value);
+                return;
+            }
+			function verify1 (){
+			  if(document.formulaire1.don.value == "") {
+                 alert("Please enter the amount!");
+                 document.formulaire1.don.focus();
+                 return false;				
+             }
+			 else 
+              for(i=0;i<document.formulaire1.don.value.length;++i)
+              if(document.formulaire1.don.value.charAt(i) < "0"|| document.formulaire1.don.value.charAt(i) > "9"){
+               alert("This is not an amount (don't use space)!");
+               document.formulaire1.don.focus();
+			   return false;			   
+			   }
+			   else 
+			  if(document.formulaire1.don.value == 0){
+			    alert('Please enter an amount different than 0');
+				document.formulaire1.don.focus();
+				return false;
+			  }
+			  else 
+		      if((document.formulaire1.card[0].checked == false)&& (document.formulaire1.card[1].checked == false) && (document.formulaire1.card[2].checked == false) ){
+			      alert('please choose your paying method');
+				  return false;
+			   }
+			  else 
+			  if(document.formulaire1.holdername.value == "") {			    
+                 alert("Please enter the holder name!");				 
+                 document.formulaire1.holdername.focus();	
+                 return false;				
+			  }
+			  else 
+              for(i=0;i<document.formulaire1.holdername.value.length;++i)
+               if(document.formulaire1.holdername.value.charAt(i) < "a" || document.formulaire1.holdername.value.charAt(i) > "z"){
+               alert("The holder name must be in small letters without any space!");
+               document.formulaire1.holdername.focus();
+			   return false;			   
+			   }
+			 else 
+		     if(document.formulaire1.holdername.value.length < 3){
+			   alert("The holder name must contain at least 3 letters!");
+               document.formulaire1.holdername.focus();
+			   return false;			   
+			   }
+			 else 
+			 if(document.formulaire1.cardnumber.value == "") {
+                 alert("Please enter your card number!");
+                 document.formulaire1.cardnumber.focus();
+                 return false;				
+             }
+			 else 
+              for(i=0;i<document.formulaire1.cardnumber.value.length;++i)
+              if(document.formulaire1.cardnumber.value.charAt(i) < "0"|| document.formulaire1.cardnumber.value.charAt(i) > "9"){
+               alert("This is not a card number (don't use space)!");
+               document.formulaire1.cardnumber.focus();
+			   return false;			   
+			   }
+			 else  
+			 if(document.formulaire1.cardnumber.value.length<10){
+			   alert("The card number must contain at least 10 numbers!");
+			   document.formulaire1.cardnumber.focus();
+			   return false;			   
+			   }
+			 else 
+			     document.getElementById('final').innerHTML="The payment is complete. Click next."
+                 return 1;
+			}
+            function look(){
+                var b=verify1();
+                if(b!=1){
+                    alert("Please fill at first the payment information.");
+                    return false;
+                }
+            }
+
+       </script>
+    </head>
+    <body>
+        <p><img src="Logo plus.svg" height="10%" width="10%"><table align="center" border="1" rules="none" height="60px" width="950px" class="table">
+            <tr><td align="center" class="font"><b><span id="final"></span></b></td></tr></table></p>
+        <table border="1" height="40px" width="950px" align="center" rules="cols" class="table" cellpadding="20">
+		  <form name="formulaire1">
+            <tr>
+                <td align="center" class="font">Enter the donation value in $:<br><br><br>
+                    <input type="text" id="don" name="don" size="30" class="input" onchange="money()">
+                </td>
+                <td>
+                    <table border="0" cellpadding="10px">
+                        <tr><td colspan="3" class="font">Select your payment card:</td></tr>
+                        <tr>
+                            <td><img src="visalogopngtransparentpng-1579588235384.png" width="70px"></td>
+                            <td><img src="989px-Mastercard-logo.svg.png" width="70px"></td>
+                            <td><img src="Screenshot_20230310-232506_Gallery.jpg" height="55px" width="70px"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="radio" name="card" id="c1" class="box"></td>
+                            <td><input type="radio" name="card" id="c2" class="box"></td>
+                            <td><input type="radio" name="card" id="c3" class="box"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="font">Card holder name:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="holdername" size="30" class="input"></td>
+                        </tr>
+                        <tr>
+                           <td colspan="3" class="font" align="right">Card number:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="cardnumber" size="15" class="input"></td> 
+                        </tr>
+				       <tr><td align="right" colspan="2"><input type="button" value="Submit" class="font" onclick="verify1()">&nbsp;&nbsp;<input type="Reset" value="Reset" class="font"></td></tr>
+                     </table>
+                </td>
+		   </form>
+        </table><br>
+        <table align="center" border="0" rules="none" width="950px">
+            <tr>
+                <td align="center"><a href="P6(donationtype).html"><input type="button" value="<=   Back" class="buttonbefore buttonafter"></a></td>
+                <td align="center"><a href="P8(thankformoneydonation).html"><input type="button" value="Next     =>" class="buttonbefore buttonafter" onclick="return look()"></a></td>
+            </tr>
+        </table>
+    </body>
+</html>

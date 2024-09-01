@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style type="text/css">
+            body{background-image:url("bg.jpg") ;background-size: cover;background-repeat: no-repeat;height:100vh;}
+            .table{border-width: 2px;border-color:black;background-color:rgb(238, 236, 129);}
+            .font{font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 28px;}
+            .pe{color:rgb(27, 27, 4);font-family: Arial, Helvetica, sans-serif;}
+            .buttonbefore{background-color: rgb(86, 87, 33);width:250px;
+            border:none;color:white;padding:15px 32px;text-align:center
+            ;font-size: 25px;font-family:Georgia, 'Times New Roman', Times, serif; border-radius: 5px;
+            }
+            .buttonafter:hover{background-color:rgb(110, 116, 36) ;}
+       </style>
+       <script type="text/javascript">
+            function find(){
+                var nom=localStorage.getItem('a1');
+                document.getElementById('dear').innerHTML=nom;
+                return;
+             }
+             function get(){
+                var n=localStorage.getItem('amount');
+                document.getElementById('money').innerHTML=n;
+                return;
+             }
+       </script>
+    </head>
+    <body onload="find(),get()">
+        <p><img src="Logo plus.svg" height="200px"></p><br><br><br>
+            <table align="center" border="1" rules="none" width="1200px" height="30px" class="table" cellpadding="20">
+                <tr><td class="font"><b>Dear  <span id="dear"></span>...</b><br><br>
+                        <b><span id="money"></span></b>$ will be deducted from your balance for <b>Syrian and Turkish families.</b>
+                    </td>
+                </tr>
+                <tr><td></td></tr>
+                <tr><th align="center" class="font">~*~*~*~*~ Thank you so much for your donation ~*~*~*~*~</th></tr>
+            </table><br><br><br>
+            <p><a href="P7(moneydonation).html"><input type="button" value="<=   Back" class="buttonbefore buttonafter"></a></p>
+    </body>
+</html>

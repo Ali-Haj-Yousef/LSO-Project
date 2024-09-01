@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style type="text/css">
+            body{background-image:url("abstract-blur-shopping-mall.jpg") ; background-size: cover;
+            background-repeat: no-repeat;height:100vh;}
+            .font{font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 28px;color:rgb(10, 9, 31)}
+            .input{height:40px;width:150px;font-size: 30px;color: rgb(10, 9, 31);}
+            .buttonbefore{background-color: rgb(34, 33, 87);width:250px;
+            border:none;color:white;padding:15px 32px;text-align:center
+            ;font-size: 25px;font-family:Georgia, 'Times New Roman', Times, serif; border-radius: 5px;
+            }
+            .buttonafter:hover{background-color:rgb(86, 86, 143) ;}
+        </style>
+        <script type="text/javascript">
+            function calc(){
+		      var t =((document.formula.oil.value)*2+(document.formula.rice.value)*1+(document.formula.pasta.value)*0.5
+              +(document.formula.beans.value)*0.8+(document.formula.flour.value)*0.5+(document.formula.salt.value)*0.2
+              +(document.formula.potato.value)*1+(document.formula.bread.value)*1+(document.formula.tuna.value)*0.2+(document.formula.lentiles.value)*0.8);
+			  document.formula.total.value = t;
+              localStorage.setItem('p0',t);
+              localStorage.setItem('item1',document.formula.oil.value);
+              localStorage.setItem('item2',document.formula.rice.value);
+              localStorage.setItem('item3',document.formula.pasta.value);
+              localStorage.setItem('item4',document.formula.beans.value);
+              localStorage.setItem('item5',document.formula.tuna.value);
+              localStorage.setItem('item6',document.formula.bread.value);
+              localStorage.setItem('item7',document.formula.lentiles.value);
+              localStorage.setItem('item8',document.formula.salt.value);
+              localStorage.setItem('item9',document.formula.flour.value);
+              localStorage.setItem('item10',document.formula.potato.value);
+              return;
+		   }
+        </script>
+    </head>
+    <body>
+        <p><img src="albaraka.svg" height="7%" width="7%"></p>
+        <form name="formula">
+            <table align="center" border="0"  width="1300px" height="30px" cellpadding="20">
+                <tr>
+                    <td align="center">
+                        <b class="font">Oil</b><br>
+                        <img src="oil.png" height="60%" width="60%"><br>
+                        <b>Unit price:</b><input type="text" size="5" value="2" readonly size="1"><br><br>
+                        <b>Quantity:</b><input type="text" name="oil" size="5" onchange="calc()">
+                    </td>
+                    <td align="center" width="200px">
+                        <b class="font">Rice</b><br>
+                        <img src="rice.png" height="60%" width="60%"><br>
+                        <b>Price per Kg:</b><input type="text" size="5" value="1" readonly size="1"><br><br>
+                        <b>Quantity in Kg:</b><input type="text" name="rice" size="5" onchange="calc()">
+                    </td>
+                    <td align="center">
+                        <b class="font">Pasta</b><br>
+                        <img src="pasta.png" height="50%" width="50%"><br><br><br>
+                        <b>Unit price:</b><input type="text" size="5" value="0.5" readonly size="1"><br><br>
+                        <b>Quantity:</b><input type="text" name="pasta" size="5" onchange="calc()">
+                    </td>
+                    <td align="center">
+                        <b class="font">Beans</b><br>
+                        <img src="beans.png" height="50%" width="50%"><br><br><br>
+                        <b>Price per Kg:</b><input type="text" size="5" value="0.8" readonly size="1"><br><br>
+                        <b>Quantity in Kg:</b><input type="text" name="beans" size="5" onchange="calc()">
+                    </td>
+                    <td align="center">
+                        <b class="font">Tuna</b><br>
+                        <img src="tuna.png" height="50%" width="50%"><br><br><br>
+                        <b>Unit price:</b><input type="text" size="5" value="0.2" readonly size="1"><br><br>
+                        <b>Quantity:</b><input type="text" name="tuna" size="5" onchange="calc()">
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        <b class="font">Bread</b><br>
+                        <img src="bread.png" height="60%" width="60%"><br>
+                        <b>Unit price:</b><input type="text" size="5" value="1" readonly size="1"><br><br>
+                        <b>Quantity:</b><input type="text" name="bread" size="5" onchange="calc()">
+                    </td>
+                    <td align="center">
+                        <b class="font">Lentiles</b><br>
+                        <img src="lentiles.png" height="60%" width="60%"><br>
+                        <b>Price per Kg:</b><input type="text" size="5" value="0.8" readonly size="1"><br><br>
+                        <b>Quantity in Kg:</b><input type="text" name="lentiles" size="5" onchange="calc()">
+                    </td>
+                    <td align="center">
+                        <b class="font">Salt</b><br>
+                        <img src="salt.png" height="50%" width="50%"><br><br><br>
+                        <b>Price per Kg:</b><input type="text" size="5" value="0.2" readonly size="1"><br><br>
+                        <b>Quantity in Kg:</b><input type="text" name="salt" size="5" onchange="calc()">
+                    </td>
+                    <td align="center" width="200px">
+                        <b class="font">Flour</b><br>
+                        <img src="flour.png" height="60%" width="60%"><br>
+                        <b>Price per Kg:</b><input type="text" size="5" value="0.5" readonly size="1"><br><br>
+                        <b>Quantity in Kg:</b><input type="text" name="flour" size="5" onchange="calc()">
+                    </td>
+                    <td align="center" width="200px">
+                        <b class="font">Potato</b><br>
+                        <img src="potato.png" height="50%" width="50%"><br><br>
+                        <b>Price per Kg:</b><input type="text" size="5" value="1" readonly size="1"><br><br>
+                        <b>Quantity in Kg:</b><input type="text" name="potato" size="5" onchange="calc()">
+                    </td>
+                </tr>
+            </table>
+            <table align="center" border="0"  width="1300px" cellpadding="20">
+                <tr>
+                    <td></td>
+                    <td align="center" class="font">Total price in $:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="total" size="20" class="input"></td>
+                    <td><a href="P17(buy).html"><input type="button" value="Buy" class="buttonbefore buttonafter"></a></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

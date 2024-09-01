@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style type="text/css">
+            body{background-image:url("bg.jpg") ;background-size: cover;background-repeat: no-repeat;height:100vh;}
+            .table{border-width: 2px;border-color:black;background-color:rgb(238, 236, 129);}
+            .font{font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 28px;}
+            .font1{font-family:Arial, Helvetica, sans-serif;
+            font-size: 28px;}
+            .buttonbefore{background-color: rgb(86, 87, 33);width:250px;
+            border:none;color:white;padding:15px 32px;text-align:center
+            ;font-size: 25px;font-family:Georgia, 'Times New Roman', Times, serif; border-radius: 5px;
+            }
+            .buttonafter:hover{background-color:rgb(110, 116, 36) ;}
+        </style>
+        <script type="text/javascript">
+            function go(){
+                var nom=localStorage.getItem('a1');
+                document.getElementById('w').innerHTML=nom;
+                var go1=localStorage.getItem('item1');
+                if(go1=="")
+                    document.getElementById('i1').innerHTML=0;
+                else
+                    document.getElementById('i1').innerHTML=go1;
+                var go2=localStorage.getItem('item2');
+                if(go2=="")
+                    document.getElementById('i2').innerHTML=0;
+                else
+                    document.getElementById('i2').innerHTML=go2;
+                var go3=localStorage.getItem('item3');
+                if(go3=="")
+                    document.getElementById('i3').innerHTML=0;
+                else
+                    document.getElementById('i3').innerHTML=go3;
+                var go4=localStorage.getItem('item4');
+                if(go4=="")
+                    document.getElementById('i4').innerHTML=0;
+                else
+                    document.getElementById('i4').innerHTML=go4;
+                var go5=localStorage.getItem('item5');
+                if(go5=="")
+                    document.getElementById('i5').innerHTML=0;
+                else
+                    document.getElementById('i5').innerHTML=go5;
+                var go6=localStorage.getItem('item6');
+                if(go6=="")
+                    document.getElementById('i6').innerHTML=0;
+                else
+                    document.getElementById('i6').innerHTML=go6;
+                var go7=localStorage.getItem('item7');
+                if(go7=="")
+                    document.getElementById('i7').innerHTML=0;
+                else
+                    document.getElementById('i7').innerHTML=go7;
+                var go8=localStorage.getItem('item8');
+                if(go8=="")
+                    document.getElementById('i8').innerHTML=0;
+                else
+                    document.getElementById('i8').innerHTML=go8;
+                var go9=localStorage.getItem('item9');
+                if(go9=="")
+                    document.getElementById('i9').innerHTML=0;
+                else
+                    document.getElementById('i9').innerHTML=go9;
+                var go10=localStorage.getItem('item10');
+                if(go10=="")
+                    document.getElementById('i10').innerHTML=0;
+                else
+                    document.getElementById('i10').innerHTML=go10;
+                return;
+            }
+        </script>
+    </head>
+    <body onload="go()">
+        <br><p><img src="Logo plus.svg" height="3%" width="3%"></p>
+            <table align="center" border=1 rules="none" width="1200" height="60" class="table" cellpadding="10">
+                <tr>
+                    <td align="center" class="font">Welcome again <b><span id="w"></span></b> to Lebanese Social Organization</td>
+                </tr>
+                <tr>
+                    <td class="font">
+                        We had received from alBaraka market the list including the food items that you had bought.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="font1">
+                        <table border="1" align="center"  height="60px" width="1050px" rules="none" class="table" cellpadding="20">
+                            <ul type="disc">
+                                <tr>
+                                    <td width="400px"><li><span id="i1"></span> bottles of oil &nbsp;<img src="oil.png" height="10%" width="10%"></li></td>
+                                    <td><li><span id="i2"></span> Kg of rice &nbsp;<img src="rice.png" height="5%" width="5%"></li></td>
+                                </tr>
+                                <tr>
+                                    <td><li><span id="i3"></span> packets of pasta &nbsp;<img src="pasta.png" height="10%" width="10%"></li></td>
+                                    <td><li><span id="i4"></span> Kg of beans &nbsp;<img src="beans.png" height="5%" width="5%"></li></td>
+                                </tr>
+                                <tr>
+                                    <td><li><span id="i5"></span> cans of tuna &nbsp;<img src="tuna.png" height="10%" width="10%"></li></td>
+                                    <td><li><span id="i6"></span> piece of bread &nbsp;<img src="bread.png" height="5%" width="5%"></li></td>
+                                </tr>
+                                <tr>
+                                    <td><li><span id="i7"></span> Kg of lentiles &nbsp;<img src="lentiles.png" height="10%" width="10%"></li></td>
+                                    <td><li><span id="i8"></span> Kg of salt &nbsp;<img src="salt.png" height="5%" width="5%"></li></td>
+                                </tr>
+                                <tr>
+                                    <td><li><span id="i9"></span> Kg of flour &nbsp;<img src="flour.png" height="15%" width="15%"></li></td>
+                                    <td><li><span id="i10"></span> Kg of potato &nbsp;<img src="potato.png" height="5%" width="5%"></li></td>
+                                </tr>
+                            </ul>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center"><a href="P23(end).html"><input type="button" value="Confirm" class="buttonbefore buttonafter"></a></td>
+                </tr>
+            </table>
+    </body>
+</html>
